@@ -1,74 +1,70 @@
 import Image from 'next/image';
-import { Mail, Phone, MapPin, Wrench } from 'lucide-react'; // Instala lucide-react para los iconos
+import { Mail, Phone, MapPin, Settings } from 'lucide-react';
 
 export default function ComingSoon() {
   return (
     <main className="min-h-screen bg-slate-50 flex flex-col items-center justify-center p-6 text-slate-800">
       <div className="max-w-3xl w-full text-center space-y-8">
         
-        {/* Logo */}
-        <div className="flex justify-center mb-8">
+        {/* Logo del Cliente */}
+        <div className="flex justify-center mb-4">
           <Image 
-            src="/logo-fortesoluciones.jpeg" // Asegúrate de mover el logo a la carpeta /public
+            src="/logo-fortesoluciones.jpeg" 
             alt="ForteSoluciones Logo"
-            width={280}
+            width={350}
             height={100}
-            className="drop-shadow-md"
+            style={{ height: 'auto', width: 'auto' }}
+            className="object-contain"
             priority
           />
         </div>
 
+        {/* Icono de Motor / Construcción Animado */}
+        <div className="relative flex justify-center">
+          <div className="absolute inset-0 bg-blue-200 blur-3xl opacity-20 rounded-full h-32 w-32 mx-auto"></div>
+          <div className="relative bg-white p-6 rounded-2xl shadow-xl border border-slate-100">
+            {/* Usamos el icono de Settings o Engine de Lucide */}
+            <Settings className="w-16 h-16 text-blue-900 animate-[spin_8s_linear_infinite]" />
+          </div>
+        </div>
+
         {/* Mensaje Principal */}
         <div className="space-y-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-blue-900 tracking-tight">
-            Sitio Web en Construcción
+          <h1 className="text-4xl md:text-5xl font-extrabold text-blue-950 tracking-tight">
+            SITIO EN MANTENIMIENTO
           </h1>
-          <p className="text-lg text-slate-600 max-w-xl mx-auto">
-            Estamos trabajando para ofrecerte la mejor experiencia en 
-            <strong> servicios automotrices y logísticos</strong>. 
-            Pronto podrás conocer todo nuestro catálogo de soluciones integrales.
+          <p className="text-lg text-slate-600 max-w-xl mx-auto leading-relaxed">
+            Estamos afinando los detalles de nuestra plataforma digital para ofrecerte 
+            <span className="text-blue-700 font-semibold"> soluciones integrales en mecánica y logística</span>.
           </p>
         </div>
 
-        {/* Badge de Estado */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 text-blue-700 rounded-full font-medium animate-pulse">
-          <Wrench size={18} />
-          <span>Lanzamiento Próximamente</span>
-        </div>
-
-        <hr className="border-slate-200" />
-
-        {/* Información de Contacto (Extraída del PDF) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-4">
-          <div className="flex flex-col items-center space-y-2">
-            <div className="p-3 bg-white rounded-full shadow-sm text-blue-600">
-              <MapPin size={24} />
-            </div>
-            <p className="text-sm font-medium">Ubicación</p>
-            <p className="text-xs text-slate-500">Mapasingue Este. Av 5ta y Av. Vía a Daule</p>
+        {/* Info del Cliente extraída del PDF */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8">
+          <div className="bg-white p-5 rounded-xl shadow-sm border border-slate-100 flex flex-col items-center">
+            <MapPin className="text-blue-600 mb-3" size={28} />
+            <p className="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Ubicación</p>
+            <p className="text-sm font-medium mt-1">Mapasingue Este. Av 5ta y Av. Vía a Daule</p>
           </div>
 
-          <div className="flex flex-col items-center space-y-2">
-            <div className="p-3 bg-white rounded-full shadow-sm text-blue-600">
-              <Phone size={24} />
-            </div>
-            <p className="text-sm font-medium">Teléfono</p>
-            <p className="text-xs text-slate-500">0993388443 (Puntocarec S.A.S.)</p>
+          <div className="bg-white p-5 rounded-xl shadow-sm border border-slate-100 flex flex-col items-center">
+            <Phone className="text-blue-600 mb-3" size={28} />
+            <p className="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Llámanos</p>
+            <p className="text-sm font-medium mt-1">0993388443</p>
           </div>
 
-          <div className="flex flex-col items-center space-y-2">
-            <div className="p-3 bg-white rounded-full shadow-sm text-blue-600">
-              <Mail size={24} />
-            </div>
-            <p className="text-sm font-medium">Contacto</p>
-            <p className="text-xs text-slate-500">info@fortesoluciones.com</p>
+          <div className="bg-white p-5 rounded-xl shadow-sm border border-slate-100 flex flex-col items-center">
+            <Mail className="text-blue-600 mb-3" size={28} />
+            <p className="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Correo</p>
+            <p className="text-sm font-medium mt-1">info@fortesoluciones.com</p>
           </div>
         </div>
 
-        {/* Footer Pie de Página */}
-        <footer className="pt-12 text-slate-400 text-xs">
-          © {new Date().getFullYear()} ForteSoluciones - Todos los derechos reservados.
-        </footer>
+        {/* Datos Corporativos (Pie de página) */}
+        <div className="pt-10 space-y-1">
+          <p className="text-xs text-slate-400 font-semibold">PUNTOCAREC S.A.S.</p>
+          <p className="text-[10px] text-slate-400">RUC: 0993388443001</p>
+        </div>
       </div>
     </main>
   );
