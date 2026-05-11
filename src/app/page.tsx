@@ -50,7 +50,7 @@ export default function ComingSoon() {
           <div className="bg-white p-5 rounded-xl shadow-sm border border-slate-100 flex flex-col items-center">
             <Phone className="text-blue-600 mb-3" size={28} />
             <p className="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Llámanos</p>
-            <p className="text-sm font-medium mt-1">0993388443</p>
+            <p className="text-sm font-medium mt-1">0963571606</p>
           </div>
 
           <div className="bg-white p-5 rounded-xl shadow-sm border border-slate-100 flex flex-col items-center">
