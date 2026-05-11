@@ -56,7 +56,7 @@ export default function ComingSoon() {
           <div className="bg-white p-5 rounded-xl shadow-sm border border-slate-100 flex flex-col items-center">
             <Mail className="text-blue-600 mb-3" size={28} />
             <p className="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Correo</p>
-            <p className="text-sm font-medium mt-1">info@fortesoluciones.com</p>
+            <p className="text-sm font-medium mt-1">informacion@fortesoluciones.com</p>
           </div>
         </div>
 
