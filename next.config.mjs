@@ -1,6 +1,14 @@
 /** @type {import('next').Config} */
 const nextConfig = {
-  poweredByHeader: false, // Esto elimina la cabecera 'X-Powered-By: Next.js'
+  poweredByHeader: false,
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'picsum.photos',
+      },
+    ],
+  },
 };
 
 export default nextConfig;
