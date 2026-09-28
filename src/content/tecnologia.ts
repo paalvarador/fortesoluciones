@@ -21,5 +21,5 @@ export const features: ServiceListItem[] = [
 export const blockchainCallout = {
   badge: 'En desarrollo',
   title: 'FORTE Blockchain',
-  body: 'Estamos desarrollando una nueva generación de trazabilidad para nuestros servicios. Cada intervención podrá contar con registros digitales verificables que permitan construir un historial confiable de vehículos, equipos y componentes.',
+  body: 'Nueva generación de trazabilidad: registros digitales verificables para el historial de vehículos y equipos.',
 };

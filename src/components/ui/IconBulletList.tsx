@@ -8,7 +8,7 @@ type Props = {
 
 export default function IconBulletList({ items, className = '' }: Props) {
   return (
-    <ul className={`grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 ${className}`}>
+    <ul className={`grid grid-cols-1 gap-4 sm:grid-cols-2 ${className}`}>
       {items.map((item) => (
         <li
           key={item.id}
@@ -17,7 +17,9 @@ export default function IconBulletList({ items, className = '' }: Props) {
           <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-600">
             <Icon name={item.icon} className="h-5 w-5" />
           </span>
-          <span className="text-sm font-medium text-slate-700">{item.label}</span>
+          <span className="min-w-0 flex-1 break-words text-sm font-medium text-slate-700">
+            {item.label}
+          </span>
         </li>
       ))}
     </ul>

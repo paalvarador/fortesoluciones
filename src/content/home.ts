@@ -45,36 +45,31 @@ export const porQueForte: ValueItem[] = [
   {
     id: 'confianza',
     title: 'CONFIANZA',
-    description:
-      'Trabajamos con transparencia y responsabilidad porque sabemos que nuestros clientes ponen en nuestras manos activos importantes para su operación.',
+    description: 'Transparencia y responsabilidad: sabemos que manejamos activos clave de tu operación.',
     icon: 'shield-check',
   },
   {
     id: 'experiencia',
     title: 'EXPERIENCIA',
-    description:
-      'Aplicamos conocimiento técnico y procesos estructurados para atender vehículos y equipos de diferentes marcas y aplicaciones.',
+    description: 'Conocimiento técnico y procesos estructurados para toda marca y aplicación.',
     icon: 'wrench',
   },
   {
     id: 'tecnologia',
     title: 'TECNOLOGÍA',
-    description:
-      'Utilizamos herramientas de diagnóstico, control y seguimiento que permiten tomar decisiones basadas en información.',
+    description: 'Herramientas de diagnóstico y seguimiento para decidir con información real.',
     icon: 'gauge',
   },
   {
     id: 'soluciones-integrales',
     title: 'SOLUCIONES INTEGRALES',
-    description:
-      'Buscamos resolver las necesidades del cliente desde una perspectiva integral, no solamente reparar una falla puntual.',
+    description: 'Resolvemos la necesidad completa, no solo la falla puntual.',
     icon: 'package',
   },
   {
     id: 'atencion-in-situ',
     title: 'ATENCIÓN IN SITU',
-    description:
-      'Llevamos nuestras soluciones hasta donde el cliente las necesita, facilitando la continuidad de sus operaciones.',
+    description: 'Llevamos la solución hasta donde nos necesites.',
     icon: 'map-pin',
   },
 ];
