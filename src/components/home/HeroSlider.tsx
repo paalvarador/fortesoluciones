@@ -3,39 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-
-const trabajos = [
-  {
-    id: 1,
-    titulo: 'Reconstrucción de Motor',
-    descripcion: 'Desmontaje y reconstrucción completa de motores multimarca con garantía de trabajo.',
-    imagen: 'https://picsum.photos/seed/engine-repair/1400/700',
-  },
-  {
-    id: 2,
-    titulo: 'Reparación de Sistema de Frenos',
-    descripcion: 'Cambio de pastillas, discos y revisión total del sistema de frenado.',
-    imagen: 'https://picsum.photos/seed/brake-system/1400/700',
-  },
-  {
-    id: 3,
-    titulo: 'Diagnóstico Electrónico',
-    descripcion: 'Lectura de fallas con escáner automotriz avanzado para cualquier marca y modelo.',
-    imagen: 'https://picsum.photos/seed/car-diagnostic/1400/700',
-  },
-  {
-    id: 4,
-    titulo: 'Suspensión y Alineación',
-    descripcion: 'Reemplazo de amortiguadores, alineación computarizada y balanceo de neumáticos.',
-    imagen: 'https://picsum.photos/seed/car-suspension/1400/700',
-  },
-  {
-    id: 5,
-    titulo: 'Mantenimiento Preventivo',
-    descripcion: 'Cambio de aceite, filtros, bujías y revisión general para mantener tu vehículo en óptimas condiciones.',
-    imagen: 'https://picsum.photos/seed/oil-change/1400/700',
-  },
-];
+import { trabajosRealizados as trabajos } from '@/content/images';
 
 export default function HeroSlider() {
   const [actual, setActual] = useState(0);
@@ -70,8 +38,8 @@ export default function HeroSlider() {
       >
         <Image
           key={trabajo.id}
-          src={trabajo.imagen}
-          alt={trabajo.titulo}
+          src={trabajo.src}
+          alt={trabajo.alt}
           fill
           className="object-cover"
           priority={trabajo.id === 1}
@@ -87,7 +55,7 @@ export default function HeroSlider() {
         className="absolute bottom-0 left-0 right-0 px-8 md:px-16 pb-12 transition-all duration-700"
         style={{ opacity: transicion ? 1 : 0, transform: transicion ? 'translateY(0)' : 'translateY(10px)' }}
       >
-        <span className="inline-block bg-blue-600 text-white text-[10px] uppercase tracking-[0.2em] font-bold px-3 py-1 rounded-full mb-3">
+        <span className="inline-block bg-blue-700 text-white text-[10px] uppercase tracking-[0.2em] font-bold px-3 py-1 rounded-full mb-3">
           Trabajos realizados
         </span>
         <h2 className="text-3xl md:text-5xl font-extrabold text-white leading-tight mb-3">

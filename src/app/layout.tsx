@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
+import { siteUrl } from "@/content/site";
+import { seo } from "@/content/seo";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import WhatsAppButton from "@/components/layout/WhatsAppButton";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,8 +19,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ForteSoluciones | Servicios Automotrices & Logísticos",
-  description: "Soluciones integrales para el mantenimiento, diagnóstico y reparación de vehículos multimarcas",
+  metadataBase: new URL(siteUrl),
+  title: seo["/"].title,
+  description: seo["/"].description,
   icons: {
     icon: "/favicon.ico"
   }
@@ -26,8 +33,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body>{children}</body>
+    <html lang="es" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className="overflow-x-hidden">
+        <Header />
+        {children}
+        <Footer />
+        <WhatsAppButton />
+        <Analytics />
+      </body>
     </html>
   );
 }
