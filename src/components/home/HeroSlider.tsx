@@ -30,7 +30,7 @@ export default function HeroSlider() {
   const trabajo = trabajos[actual];
 
   return (
-    <div className="relative w-full h-[380px] overflow-hidden rounded-2xl shadow-xl bg-slate-900">
+    <div className="relative w-full h-[380px] overflow-hidden rounded-md shadow-card-hover bg-navy-950">
       {/* Imagen de fondo */}
       <div
         className="absolute inset-0 transition-opacity duration-700"
@@ -48,20 +48,18 @@ export default function HeroSlider() {
       </div>
 
       {/* Overlay degradado */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+      <div className="absolute inset-0 bg-gradient-to-t from-navy-950/95 via-navy-950/50 to-navy-950/10" />
 
       {/* Texto sobre el slide */}
       <div
         className="absolute bottom-0 left-0 right-0 px-8 md:px-16 pb-12 transition-all duration-700"
         style={{ opacity: transicion ? 1 : 0, transform: transicion ? 'translateY(0)' : 'translateY(10px)' }}
       >
-        <span className="inline-block bg-blue-700 text-white text-[10px] uppercase tracking-[0.2em] font-bold px-3 py-1 rounded-full mb-3">
-          Trabajos realizados
-        </span>
-        <h2 className="text-3xl md:text-5xl font-extrabold text-white leading-tight mb-3">
+        <p className="eyebrow mb-3 text-brand-400">Trabajos realizados</p>
+        <h2 className="text-3xl md:text-5xl font-bold uppercase text-white leading-none mb-3">
           {trabajo.titulo}
         </h2>
-        <p className="text-slate-200 text-sm md:text-base max-w-xl leading-relaxed">
+        <p className="text-navy-100 text-sm md:text-base max-w-xl leading-relaxed">
           {trabajo.descripcion}
         </p>
       </div>
@@ -69,7 +67,7 @@ export default function HeroSlider() {
       {/* Flecha izquierda */}
       <button
         onClick={anterior}
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white rounded-full p-3 transition-colors z-10"
+        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur hover:bg-brand-600 text-white rounded-full p-3 transition-colors z-10"
         aria-label="Anterior"
       >
         <ChevronLeft className="w-6 h-6" />
@@ -78,7 +76,7 @@ export default function HeroSlider() {
       {/* Flecha derecha */}
       <button
         onClick={siguiente}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white rounded-full p-3 transition-colors z-10"
+        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur hover:bg-brand-600 text-white rounded-full p-3 transition-colors z-10"
         aria-label="Siguiente"
       >
         <ChevronRight className="w-6 h-6" />
@@ -91,7 +89,7 @@ export default function HeroSlider() {
             key={i}
             onClick={() => ir(i)}
             className={`h-1 rounded-full transition-all duration-300 ${
-              i === actual ? 'bg-white w-8' : 'bg-white/40 hover:bg-white/70 w-4'
+              i === actual ? 'bg-brand-600 w-8' : 'bg-white/40 hover:bg-white/70 w-4'
             }`}
             aria-label={`Ir al slide ${i + 1}`}
           />
@@ -99,7 +97,7 @@ export default function HeroSlider() {
       </div>
 
       {/* Contador */}
-      <div className="absolute top-4 right-6 text-white/60 text-sm font-semibold tabular-nums">
+      <div className="absolute top-4 right-6 font-display text-white/70 text-lg font-bold tabular-nums">
         {String(actual + 1).padStart(2, '0')} / {String(trabajos.length).padStart(2, '0')}
       </div>
     </div>

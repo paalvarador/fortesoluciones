@@ -20,14 +20,14 @@ export const metadata: Metadata = seo['/separ-filter'];
 export default function SeparFilterPage() {
   return (
     <main>
-      <PageHeader title={titulo} intro={intro} />
+      <PageHeader title={titulo} intro={intro} eyebrow="Separ Filter" image="tecnologia" />
 
       <section className="px-4 pt-16">
         <div className="mx-auto grid max-w-3xl grid-cols-2 items-start gap-4 sm:gap-6">
           {separFilterProducto.map((foto) => (
             <div
               key={foto.src}
-              className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm"
+              className="overflow-hidden rounded-md bg-white shadow-card"
             >
               <Image
                 src={foto.src}
@@ -44,25 +44,25 @@ export default function SeparFilterPage() {
 
       <section className="px-4 py-16">
         <dl className="mx-auto grid max-w-4xl grid-cols-1 gap-5 sm:grid-cols-2">
-          <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-            <dt className="text-xs font-bold uppercase tracking-wide text-blue-600">Problema</dt>
-            <dd className="mt-2 text-sm text-slate-700">{problema}</dd>
+          <div className="rounded-md border-l-4 border-brand-600 bg-white p-6 shadow-card">
+            <dt className="eyebrow text-xs">Problema</dt>
+            <dd className="mt-2 font-display text-lg font-semibold leading-snug text-navy-900">{problema}</dd>
           </div>
-          <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-            <dt className="text-xs font-bold uppercase tracking-wide text-blue-600">
+          <div className="rounded-md border-l-4 border-brand-600 bg-white p-6 shadow-card">
+            <dt className="eyebrow text-xs">
               Protección
             </dt>
-            <dd className="mt-2 text-sm text-slate-700">{proteccion}</dd>
+            <dd className="mt-2 font-display text-lg font-semibold leading-snug text-navy-900">{proteccion}</dd>
           </div>
-          <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-            <dt className="text-xs font-bold uppercase tracking-wide text-blue-600">Objetivo</dt>
-            <dd className="mt-2 text-sm text-slate-700">{objetivo}</dd>
+          <div className="rounded-md border-l-4 border-brand-600 bg-white p-6 shadow-card">
+            <dt className="eyebrow text-xs">Objetivo</dt>
+            <dd className="mt-2 font-display text-lg font-semibold leading-snug text-navy-900">{objetivo}</dd>
           </div>
-          <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-            <dt className="text-xs font-bold uppercase tracking-wide text-blue-600">
+          <div className="rounded-md border-l-4 border-brand-600 bg-white p-6 shadow-card">
+            <dt className="eyebrow text-xs">
               Aplicaciones
             </dt>
-            <dd className="mt-2 text-sm text-slate-700">{aplicaciones}</dd>
+            <dd className="mt-2 font-display text-lg font-semibold leading-snug text-navy-900">{aplicaciones}</dd>
           </div>
         </dl>
       </section>

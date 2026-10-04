@@ -27,6 +27,8 @@ export const queHacemos = {
       'Carrocería y pintura',
       'Lavado y detailing',
     ],
+    // Ícono por ítem (mismo orden que `items`), ver catálogo en Icon.tsx.
+    icons: ['wrench', 'zap', 'cog', 'cog', 'zap', 'gauge', 'thermometer', 'paintbrush', 'droplets'],
   },
   logistica: {
     title: 'Logística',
@@ -38,6 +40,7 @@ export const queHacemos = {
       'Soluciones para transporte y operación',
       'Inspecciones técnicas',
     ],
+    icons: ['truck', 'map-pin', 'gauge', 'wrench', 'container', 'clipboard-check'],
   },
 };
 
@@ -81,3 +84,38 @@ export const empresasBanner: CTAContent = {
   ctaLabel: 'SOLICITAR ASESORÍA EMPRESARIAL',
   ctaHref: '/contacto',
 };
+
+// Tarjetas con foto de la sección "Nuestras soluciones" (la imagen de cada una
+// vive en images.ts → solucionesHome / separFilterProducto).
+export const solucionesDestacadas = [
+  {
+    id: 'automotriz',
+    title: 'Soluciones automotrices',
+    description:
+      'Mantenimiento preventivo, correctivo, diagnóstico y reparación para vehículos livianos y pesados.',
+    href: '/soluciones-automotrices',
+  },
+  {
+    id: 'logistica',
+    title: 'Soluciones logísticas',
+    description:
+      'Mantenimiento y control para empresas que dependen de sus vehículos y equipos para operar.',
+    href: '/soluciones-logisticas',
+  },
+  {
+    id: 'separ-filter',
+    title: 'Separ Filter',
+    description:
+      'Filtración y separación de agua para proteger el sistema de combustible diésel.',
+    href: '/separ-filter',
+  },
+] as const;
+
+// Datos destacados del bloque "Nosotros" (reemplazan las cifras de la
+// referencia: no publicamos números que el cliente no haya confirmado).
+export const destacadosNosotros: { id: string; title: string; label: string }[] = [
+  { id: 'vehiculos', title: 'Livianos y pesados', label: 'Todo tipo de vehículo' },
+  { id: 'combustible', title: 'Gasolina y diésel', label: 'Mecánica multimarca' },
+  { id: 'in-situ', title: 'IN SITU', label: 'Vamos hasta tu operación' },
+  { id: 'flotas', title: 'Flotas', label: 'Control y seguimiento' },
+];

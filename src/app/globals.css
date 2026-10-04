@@ -5,3 +5,43 @@
 body {
   background-color: white !important;
 }
+
+@layer base {
+  h1,
+  h2,
+  h3 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  /* Eyebrow con doble barra roja "//" como en la referencia del cliente. */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 font-display text-sm font-bold uppercase tracking-[0.18em] text-brand-600;
+  }
+  .eyebrow::before {
+    content: '';
+    @apply inline-block h-3.5 w-4 shrink-0;
+    background: linear-gradient(
+      115deg,
+      transparent 0 18%,
+      currentColor 18% 38%,
+      transparent 38% 58%,
+      currentColor 58% 78%,
+      transparent 78%
+    );
+  }
+}
+
+@layer utilities {
+  /* Cortes diagonales de sección (look "racing" de la referencia). */
+  .clip-diagonal-b {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 4rem));
+  }
+  .clip-panel-left {
+    clip-path: polygon(18% 0, 100% 0, 100% 100%, 0 100%);
+  }
+  .clip-parallelogram {
+    clip-path: polygon(12% 0, 100% 0, 88% 100%, 0 100%);
+  }
+}

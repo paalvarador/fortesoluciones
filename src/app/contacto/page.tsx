@@ -10,7 +10,7 @@ export const metadata: Metadata = seo['/contacto'];
 export default function ContactoPage() {
   return (
     <main>
-      <PageHeader title={titulo} intro={body} />
+      <PageHeader title={titulo} intro={body} eyebrow="Contacto" />
 
       <section className="px-4 py-16">
         <div className="mx-auto max-w-2xl">

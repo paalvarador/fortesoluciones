@@ -61,7 +61,7 @@ export default function MobileNav() {
         aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
         aria-expanded={open}
         aria-controls="mobile-nav-panel"
-        className="rounded-md p-2 text-blue-950 hover:bg-slate-100"
+        className="rounded-md p-2 text-navy-900 hover:bg-slate-100"
       >
         {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
       </button>
@@ -73,7 +73,7 @@ export default function MobileNav() {
             <div
               onClick={() => setOpen(false)}
               aria-hidden="true"
-              className={`fixed inset-0 z-40 bg-slate-950/50 transition-opacity duration-300 ${
+              className={`fixed inset-0 z-40 bg-navy-950/60 transition-opacity duration-300 ${
                 open ? 'opacity-100' : 'pointer-events-none opacity-0'
               }`}
             />
@@ -83,22 +83,22 @@ export default function MobileNav() {
               id="mobile-nav-panel"
               aria-label="Navegación móvil"
               inert={!open}
-              className={`fixed inset-y-0 right-0 z-50 flex w-72 max-w-[85%] transform flex-col overflow-y-auto bg-white shadow-xl transition-transform duration-300 ease-in-out ${
+              className={`fixed inset-y-0 right-0 z-50 flex w-72 max-w-[85%] transform flex-col overflow-y-auto bg-navy-950 shadow-xl transition-transform duration-300 ease-in-out ${
                 open ? 'translate-x-0' : 'translate-x-full'
               }`}
             >
-              <div className="flex items-center justify-between border-b border-slate-100 px-4 py-4">
-                <span className="text-sm font-bold uppercase tracking-wide text-blue-950">Menú</span>
+              <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
+                <span className="eyebrow text-brand-400">Menú</span>
                 <button
                   type="button"
                   onClick={() => setOpen(false)}
                   aria-label="Cerrar menú"
-                  className="rounded-md p-2 text-blue-950 hover:bg-slate-100"
+                  className="rounded-md p-2 text-white hover:bg-white/10"
                 >
                   <X className="h-5 w-5" />
                 </button>
               </div>
-              <ul className="flex flex-1 flex-col gap-1 px-2 py-3 text-sm font-medium">
+              <ul className="flex flex-1 flex-col gap-1 px-3 py-4 font-display text-base font-bold uppercase tracking-wide">
                 {nav.map((item) => {
                   const isActive = item.href === '/' ? pathname === '/' : pathname.startsWith(item.href);
                   return (
@@ -106,10 +106,10 @@ export default function MobileNav() {
                       <Link
                         href={item.href}
                         aria-current={isActive ? 'page' : undefined}
-                        className={`block rounded-md px-3 py-3 transition-colors ${
+                        className={`block rounded-md border-l-4 px-3 py-3 transition-colors ${
                           isActive
-                            ? 'bg-blue-50 text-blue-700'
-                            : 'text-slate-700 hover:bg-slate-50 hover:text-blue-700'
+                            ? 'border-brand-600 bg-white/5 text-white'
+                            : 'border-transparent text-navy-100 hover:bg-white/5 hover:text-white'
                         }`}
                       >
                         {item.label}
@@ -118,6 +118,14 @@ export default function MobileNav() {
                   );
                 })}
               </ul>
+              <div className="border-t border-white/10 p-5">
+                <Link
+                  href="/contacto"
+                  className="flex w-full items-center justify-center rounded-full bg-brand-600 px-5 py-3 font-display text-sm font-bold uppercase tracking-wider text-white transition-colors hover:bg-brand-700"
+                >
+                  Solicitar cotización
+                </Link>
+              </div>
             </nav>
           </>,
           document.body,

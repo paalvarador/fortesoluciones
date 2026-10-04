@@ -12,12 +12,12 @@ export default function IconBulletList({ items, className = '' }: Props) {
       {items.map((item) => (
         <li
           key={item.id}
-          className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition-shadow hover:shadow-md"
+          className="group flex items-center gap-4 rounded-md border-l-4 border-brand-600 bg-white p-4 shadow-card transition-all duration-300 hover:-translate-y-0.5 hover:shadow-card-hover"
         >
-          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-600">
+          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-navy-900 text-white transition-colors group-hover:bg-brand-600">
             <Icon name={item.icon} className="h-5 w-5" />
           </span>
-          <span className="min-w-0 flex-1 break-words text-sm font-medium text-slate-700">
+          <span className="min-w-0 flex-1 break-words font-display text-base font-semibold uppercase leading-tight tracking-wide text-navy-900">
             {item.label}
           </span>
         </li>

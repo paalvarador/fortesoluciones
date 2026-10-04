@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Nunito_Sans, Rajdhani } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { siteUrl } from "@/content/site";
@@ -8,13 +8,15 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// Rajdhani: títulos condensados en mayúsculas, como en la referencia del cliente.
+const display = Rajdhani({
+  variable: "--font-display",
   subsets: ["latin"],
+  weight: ["600", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const body = Nunito_Sans({
+  variable: "--font-body",
   subsets: ["latin"],
 });
 
@@ -33,8 +35,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body className="overflow-x-hidden">
+    <html lang="es" className={`${display.variable} ${body.variable}`}>
+      <body className="overflow-x-hidden font-sans text-slate-600 antialiased">
         <Header />
         {children}
         <Footer />

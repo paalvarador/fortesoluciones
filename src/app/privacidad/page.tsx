@@ -8,7 +8,7 @@ export const metadata: Metadata = seo['/privacidad'];
 export default function PrivacidadPage() {
   return (
     <main>
-      <PageHeader title={titulo} />
+      <PageHeader title={titulo} eyebrow="Privacidad" />
       <div className="mx-auto max-w-3xl px-4 py-16">
         <div className="space-y-4">
           {parrafos.map((parrafo, index) => (

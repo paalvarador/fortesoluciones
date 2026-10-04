@@ -18,7 +18,7 @@ export const metadata: Metadata = seo['/soluciones-logisticas'];
 export default function SolucionesLogisticasPage() {
   return (
     <main>
-      <PageHeader title={titulo} intro={intro} />
+      <PageHeader title={titulo} intro={intro} eyebrow="Soluciones logísticas" image="logistica" />
 
       <section className="px-4 py-16">
         <div className="mx-auto max-w-4xl">

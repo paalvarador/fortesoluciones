@@ -10,7 +10,7 @@ export const metadata: Metadata = seo['/nosotros'];
 export default function NosotrosPage() {
   return (
     <main>
-      <PageHeader title={titulo} />
+      <PageHeader title={titulo} eyebrow="Nosotros" image="taller" />
 
       <section className="mx-auto max-w-3xl space-y-4 px-4 py-16">
         {historia.map((parrafo, index) => (

@@ -10,7 +10,7 @@ export const metadata: Metadata = seo['/tecnologia'];
 export default function TecnologiaPage() {
   return (
     <main>
-      <PageHeader title={titulo} intro={intro} />
+      <PageHeader title={titulo} intro={intro} eyebrow="Tecnología" image="tecnologia" />
 
       <section className="px-4 py-16">
         <div className="mx-auto max-w-4xl">

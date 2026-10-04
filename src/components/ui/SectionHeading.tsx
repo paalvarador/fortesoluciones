@@ -2,21 +2,40 @@ type Props = {
   eyebrow?: string;
   title: string;
   subtitle?: string;
+  align?: 'center' | 'left';
+  /** Para secciones sobre fondo azul marino. */
+  inverted?: boolean;
 };
 
-export default function SectionHeading({ eyebrow, title, subtitle }: Props) {
+export default function SectionHeading({
+  eyebrow,
+  title,
+  subtitle,
+  align = 'center',
+  inverted = false,
+}: Props) {
+  const alignClasses = align === 'center' ? 'mx-auto text-center' : 'text-left';
+
   return (
-    <div className="mx-auto max-w-2xl px-4 text-center">
+    <div className={`max-w-2xl px-4 ${alignClasses}`}>
       {eyebrow && (
-        <div className="mb-3 flex items-center justify-center gap-3">
-          <span className="h-px w-8 bg-blue-600" aria-hidden="true" />
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-blue-600">{eyebrow}</p>
-          <span className="h-px w-8 bg-blue-600" aria-hidden="true" />
-        </div>
+        <p className={`eyebrow mb-3 ${inverted ? 'text-brand-400' : ''}`}>{eyebrow}</p>
       )}
-      <h2 className="text-2xl font-extrabold tracking-tight text-blue-950 md:text-3xl">{title}</h2>
+      <h2
+        className={`text-3xl font-bold uppercase leading-[1.05] tracking-tight md:text-[2.75rem] ${
+          inverted ? 'text-white' : 'text-navy-900'
+        }`}
+      >
+        {title}
+      </h2>
       {subtitle && (
-        <p className="mx-auto mt-3 max-w-xl text-base text-slate-600 md:text-lg">{subtitle}</p>
+        <p
+          className={`mt-4 text-base md:text-lg ${align === 'center' ? 'mx-auto max-w-xl' : ''} ${
+            inverted ? 'text-navy-100' : 'text-slate-600'
+          }`}
+        >
+          {subtitle}
+        </p>
       )}
     </div>
   );

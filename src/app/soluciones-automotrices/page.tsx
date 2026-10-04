@@ -9,7 +9,7 @@ export const metadata: Metadata = seo['/soluciones-automotrices'];
 export default function SolucionesAutomotricesPage() {
   return (
     <main>
-      <PageHeader title={titulo} intro={intro} />
+      <PageHeader title={titulo} intro={intro} eyebrow="Soluciones automotrices" image="automotriz" />
       <section className="px-4 py-16">
         <div className="mx-auto max-w-4xl">
           <IconBulletList items={services} />

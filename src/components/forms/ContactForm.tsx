@@ -103,10 +103,10 @@ export default function ContactForm() {
   const fieldErrors = state.status === 'field-errors' ? state.errors : {};
 
   const inputClasses = (hasError: boolean) =>
-    `w-full rounded-md border px-3 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-0 ${
+    `w-full rounded-md border bg-white px-4 py-3 text-sm text-navy-900 placeholder:text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-0 ${
       hasError
         ? 'border-red-400 focus:border-red-500 focus:ring-red-500/20'
-        : 'border-slate-300 focus:border-blue-600 focus:ring-blue-600/20'
+        : 'border-slate-200 focus:border-brand-600 focus:ring-brand-600/15'
     }`;
 
   return (
@@ -116,7 +116,7 @@ export default function ContactForm() {
           const hasError = Boolean(fieldErrors[field.name]);
           return (
             <div key={field.name} className="flex flex-col gap-1.5">
-              <label htmlFor={field.name} className="text-sm font-medium text-slate-700">
+              <label htmlFor={field.name} className="font-display text-sm font-bold uppercase tracking-wide text-navy-900">
                 {field.label}
                 {field.required && (
                   <span aria-hidden="true" className="text-red-600">
@@ -184,11 +184,11 @@ export default function ContactForm() {
             onChange={(e) => setConsent(e.target.checked)}
             aria-invalid={Boolean(fieldErrors.consentimiento)}
             aria-describedby={fieldErrors.consentimiento ? 'consentimiento-error' : undefined}
-            className="mt-0.5 h-5 w-5 shrink-0 rounded border-slate-300 text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600/30"
+            className="mt-0.5 h-5 w-5 shrink-0 rounded border-slate-300 accent-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-600/30"
           />
           <label htmlFor="consentimiento" className="text-sm leading-relaxed text-slate-600">
             {consentText}{' '}
-            <Link href="/privacidad" className="font-medium text-blue-700 underline">
+            <Link href="/privacidad" className="font-semibold text-brand-600 underline">
               Ver aviso de privacidad
             </Link>
           </label>
@@ -222,7 +222,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={state.status === 'submitting'}
-          className="w-full rounded-md bg-blue-700 px-5 py-3 text-sm font-semibold uppercase tracking-wide text-white transition-colors hover:bg-blue-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-700 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+          className="w-full rounded-full bg-brand-600 px-8 py-3.5 font-display text-sm font-bold uppercase tracking-wider text-white shadow-lg shadow-brand-900/25 transition-colors hover:bg-brand-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
         >
           {state.status === 'submitting' ? 'Enviando...' : ctaLabel}
         </button>
@@ -234,7 +234,7 @@ export default function ContactForm() {
           href={contact.whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="font-medium text-blue-700 underline"
+          className="font-semibold text-brand-600 underline"
         >
           WhatsApp {contact.phoneDisplay}
         </a>

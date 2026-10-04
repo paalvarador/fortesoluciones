@@ -12,7 +12,7 @@ export const metadata: Metadata = seo['/empresas'];
 export default function EmpresasPage() {
   return (
     <main>
-      <PageHeader title={titulo} intro={body} />
+      <PageHeader title={titulo} intro={body} eyebrow="Empresas" image="logistica" />
 
       <div className="px-4 py-10 text-center">
         <Button href={ctaHref} variant="primary">
